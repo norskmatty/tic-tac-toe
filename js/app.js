@@ -23,71 +23,89 @@ $(document).ready(function() {
 		if($('.row1 .column1').hasClass('O') && $('.row2 .column1').hasClass('O') && $('.row3 .column1').hasClass('O')) {
 			alert(" 'O' wins!");
 			owin++;
+			newGame();
 		}
 		else if($('.row1 .column2').hasClass('O') && $('.row2 .column2').hasClass('O') && $('.row3 .column2').hasClass('O')) {
 			alert(" 'O' wins!");
 			owin++;
+			newGame();
 		}
 		else if($('.row1 .column3').hasClass('O') && $('.row2 .column3').hasClass('O') && $('.row3 .column3').hasClass('O')) {
 			alert(" 'O' wins!");
 			owin++;
+			newGame();
 		}
 		else if($('.row1 .column1').hasClass('O') && $('.row1 .column2').hasClass('O') && $('.row1 .column3').hasClass('O')) {
 			alert(" 'O' wins!");
 			owin++;
+			newGame();
 		}
 		else if($('.row2 .column1').hasClass('O') && $('.row2 .column2').hasClass('O') && $('.row2 .column3').hasClass('O')) {
 			alert(" 'O' wins!");
 			owin++;
+			newGame();
 		}
 		else if($('.row3 .column1').hasClass('O') && $('.row3 .column2').hasClass('O') && $('.row3 .column3').hasClass('O')) {
 			alert(" 'O' wins!");
 			owin++;
+			newGame();
 		}
 		else if($('.row1 .column1').hasClass('O') && $('.row2 .column2').hasClass('O') && $('.row3 .column3').hasClass('O')) {
 			alert(" 'O' wins!");
 			owin++;
+			newGame();
 		}
 		else if($('.row1 .column3').hasClass('O') && $('.row2 .column2').hasClass('O') && $('.row3 .column1').hasClass('O')) {
 			alert(" 'O' wins!");
 			owin++;
+			newGame();
 		}
 		else if($('.row1 .column1').hasClass('X') && $('.row2 .column1').hasClass('X') && $('.row3 .column1').hasClass('X')) {
 			alert(" 'X' wins!");
 			xwin++;
+			newGame();
 		}
 		else if($('.row1 .column2').hasClass('X') && $('.row2 .column2').hasClass('X') && $('.row3 .column2').hasClass('X')) {
 			alert(" 'X' wins!");
 			xwin++;
+			newGame();
 		}
 		else if($('.row1 .column3').hasClass('X') && $('.row2 .column3').hasClass('X') && $('.row3 .column3').hasClass('X')) {
 			alert(" 'X' wins!");
 			xwin++;
+			newGame();
 		}
 		else if($('.row1 .column1').hasClass('X') && $('.row1 .column2').hasClass('X') && $('.row1 .column3').hasClass('X')) {
 			alert(" 'X' wins!");
 			xwin++;
+			newGame();
 		}
 		else if($('.row2 .column1').hasClass('X') && $('.row2 .column2').hasClass('X') && $('.row2 .column3').hasClass('X')) {
 			alert(" 'X' wins!");
 			xwin++;
+			newGame();
 		}
 		else if($('.row3 .column1').hasClass('X') && $('.row3 .column2').hasClass('X') && $('.row3 .column3').hasClass('X')) {
 			alert(" 'X' wins!");
 			xwin++;
+			newGame();
 		}
 		else if($('.row1 .column1').hasClass('X') && $('.row2 .column2').hasClass('X') && $('.row3 .column3').hasClass('X')) {
 			alert(" 'X' wins!");
 			xwin++;
+			newGame();
 		}
 		else if($('.row1 .column3').hasClass('X') && $('.row2 .column2').hasClass('X') && $('.row3 .column1').hasClass('X')) {
 			alert(" 'X' wins!");
 			xwin++;
+			newGame();
 		}
 		else if($('.row1 .column1').is('.X, .O') && $('.row1 .column2').is('.X, .O') && $('.row1 .column3').is('.X, .O') && $('.row2 .column1').is('.X, .O') && $('.row2 .column2').is('.X, .O') && $('.row2 .column3').is('.X, .O') && $('.row3 .column1').is('.X, .O') && $('.row3 .column2').is('.X, .O') && $('.row3 .column3').is('.X, .O'))  {
 			alert(" It's a tie!  Surprise.");
 			ties++;
+			newGame();
 		}
+	
 	})
 
 	$('button').on('click', function () {
@@ -97,4 +115,9 @@ $(document).ready(function() {
 
 
 })
+
+function newGame() {
+	$('.box').removeClass("X");
+	$('.box').removeClass("O");
+}
 
