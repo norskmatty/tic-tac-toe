@@ -2,7 +2,7 @@ var turn = 0;
 var game = 0;
 var xwin = 0;
 var owin = 0;
-var ties = 0;
+var tiecount = 0;
 
 $(document).ready(function() {
 
@@ -115,10 +115,10 @@ $(document).ready(function() {
 		newGame();
 		owin = 0;
 		xwin = 0;
-		ties = 0;
+		tiecount = 0;
 		$('.ocount').text(owin);
 		$('.xcount').text(xwin);
-		$('.tie').text(ties);
+		$('.tiecount').text(tiecount);
 	});
 
 
@@ -150,6 +150,6 @@ function xwins() {
 }
 
 function ties() {
-	ties++;
-	$('.tie').text(ties);
+	tiecount++;
+	$('.tiecount').text(ties);
 }
