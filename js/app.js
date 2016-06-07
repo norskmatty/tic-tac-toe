@@ -113,6 +113,12 @@ $(document).ready(function() {
 
 	$('button').on('click', function () {
 		newGame();
+		owin = 0;
+		xwin = 0;
+		ties = 0;
+		$('.ocount').text(owin);
+		$('.xcount').text(xwin);
+		$('.tie').text(ties);
 	});
 
 
@@ -129,22 +135,21 @@ function newGame() {
 		turn = 0;
 		game = 0;
 	}
+	
+
 }
 
 function owins() {
 	owin++;
 	$('.ocount').text(owin);
-	console.log(owin)
 }
 
 function xwins() {
 	xwin++;
 	$('.xcount').text(xwin);
-	console.log(xwin)
 }
 
 function ties() {
 	ties++;
 	$('.tie').text(ties);
-	console.log(ties)
 }
