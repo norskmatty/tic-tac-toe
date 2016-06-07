@@ -2,7 +2,7 @@ var turn = 0;
 var game = 0;
 var xwin = 0;
 var owin = 0;
-var tiecount = 0;
+var tiecounter = 0;
 
 $(document).ready(function() {
 
@@ -105,8 +105,10 @@ $(document).ready(function() {
 		}
 		else if($('.row1 .column1').is('.X, .O') && $('.row1 .column2').is('.X, .O') && $('.row1 .column3').is('.X, .O') && $('.row2 .column1').is('.X, .O') && $('.row2 .column2').is('.X, .O') && $('.row2 .column3').is('.X, .O') && $('.row3 .column1').is('.X, .O') && $('.row3 .column2').is('.X, .O') && $('.row3 .column3').is('.X, .O'))  {
 			alert(" It's a tie!  Surprise.");
-			ties();
+			tiecounter++;
+			$('.tier2').text(tiecounter);
 			newGame();
+			console.log(tiecounter);
 		}
 	
 	})
@@ -115,10 +117,10 @@ $(document).ready(function() {
 		newGame();
 		owin = 0;
 		xwin = 0;
-		tiecount = 0;
+		tiecounter = 0;
 		$('.ocount').text(owin);
 		$('.xcount').text(xwin);
-		$('.tiecount').text(tiecount);
+		$('.tier2').text(tiecounter);
 	});
 
 
@@ -147,9 +149,4 @@ function owins() {
 function xwins() {
 	xwin++;
 	$('.xcount').text(xwin);
-}
-
-function ties() {
-	tiecount++;
-	$('.tiecount').text(ties);
 }
