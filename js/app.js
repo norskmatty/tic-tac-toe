@@ -1,9 +1,12 @@
+var turn = 0;
+var game = 0;
+var xwin = 0;
+var owin = 0;
+var ties = 0;
+
 $(document).ready(function() {
 
-	var turn = 0;
-	var xwin = 0;
-	var owin = 0;
-	var ties = 0;
+	
 
 	$('.box').on('click', function() {
 		if($(this).hasClass('X') || $(this).hasClass('O')) {
@@ -22,96 +25,95 @@ $(document).ready(function() {
 
 		if($('.row1 .column1').hasClass('O') && $('.row2 .column1').hasClass('O') && $('.row3 .column1').hasClass('O')) {
 			alert(" 'O' wins!");
-			owin++;
+			owins();
 			newGame();
 		}
 		else if($('.row1 .column2').hasClass('O') && $('.row2 .column2').hasClass('O') && $('.row3 .column2').hasClass('O')) {
 			alert(" 'O' wins!");
-			owin++;
+			owins();
 			newGame();
 		}
 		else if($('.row1 .column3').hasClass('O') && $('.row2 .column3').hasClass('O') && $('.row3 .column3').hasClass('O')) {
 			alert(" 'O' wins!");
-			owin++;
+			owins();
 			newGame();
 		}
 		else if($('.row1 .column1').hasClass('O') && $('.row1 .column2').hasClass('O') && $('.row1 .column3').hasClass('O')) {
 			alert(" 'O' wins!");
-			owin++;
+			owins();
 			newGame();
 		}
 		else if($('.row2 .column1').hasClass('O') && $('.row2 .column2').hasClass('O') && $('.row2 .column3').hasClass('O')) {
 			alert(" 'O' wins!");
-			owin++;
+			owins();
 			newGame();
 		}
 		else if($('.row3 .column1').hasClass('O') && $('.row3 .column2').hasClass('O') && $('.row3 .column3').hasClass('O')) {
 			alert(" 'O' wins!");
-			owin++;
+			owins();
 			newGame();
 		}
 		else if($('.row1 .column1').hasClass('O') && $('.row2 .column2').hasClass('O') && $('.row3 .column3').hasClass('O')) {
 			alert(" 'O' wins!");
-			owin++;
+			owins();
 			newGame();
 		}
 		else if($('.row1 .column3').hasClass('O') && $('.row2 .column2').hasClass('O') && $('.row3 .column1').hasClass('O')) {
 			alert(" 'O' wins!");
-			owin++;
+			owins();
 			newGame();
 		}
 		else if($('.row1 .column1').hasClass('X') && $('.row2 .column1').hasClass('X') && $('.row3 .column1').hasClass('X')) {
 			alert(" 'X' wins!");
-			xwin++;
+			xwins();
 			newGame();
 		}
 		else if($('.row1 .column2').hasClass('X') && $('.row2 .column2').hasClass('X') && $('.row3 .column2').hasClass('X')) {
 			alert(" 'X' wins!");
-			xwin++;
+			xwins();
 			newGame();
 		}
 		else if($('.row1 .column3').hasClass('X') && $('.row2 .column3').hasClass('X') && $('.row3 .column3').hasClass('X')) {
 			alert(" 'X' wins!");
-			xwin++;
+			xwins(x);
 			newGame();
 		}
 		else if($('.row1 .column1').hasClass('X') && $('.row1 .column2').hasClass('X') && $('.row1 .column3').hasClass('X')) {
 			alert(" 'X' wins!");
-			xwin++;
+			xwins();
 			newGame();
 		}
 		else if($('.row2 .column1').hasClass('X') && $('.row2 .column2').hasClass('X') && $('.row2 .column3').hasClass('X')) {
 			alert(" 'X' wins!");
-			xwin++;
+			xwins();
 			newGame();
 		}
 		else if($('.row3 .column1').hasClass('X') && $('.row3 .column2').hasClass('X') && $('.row3 .column3').hasClass('X')) {
 			alert(" 'X' wins!");
-			xwin++;
+			xwins();
 			newGame();
 		}
 		else if($('.row1 .column1').hasClass('X') && $('.row2 .column2').hasClass('X') && $('.row3 .column3').hasClass('X')) {
 			alert(" 'X' wins!");
-			xwin++;
+			xwins();
 			newGame();
 		}
 		else if($('.row1 .column3').hasClass('X') && $('.row2 .column2').hasClass('X') && $('.row3 .column1').hasClass('X')) {
 			alert(" 'X' wins!");
-			xwin++;
+			xwins();
 			newGame();
 		}
 		else if($('.row1 .column1').is('.X, .O') && $('.row1 .column2').is('.X, .O') && $('.row1 .column3').is('.X, .O') && $('.row2 .column1').is('.X, .O') && $('.row2 .column2').is('.X, .O') && $('.row2 .column3').is('.X, .O') && $('.row3 .column1').is('.X, .O') && $('.row3 .column2').is('.X, .O') && $('.row3 .column3').is('.X, .O'))  {
 			alert(" It's a tie!  Surprise.");
-			ties++;
+			ties();
 			newGame();
 		}
 	
 	})
 
 	$('button').on('click', function () {
-		$('.box').removeClass("X");
-		$('.box').removeClass("O");
-	})
+		newGame();
+	});
 
 
 })
@@ -119,5 +121,30 @@ $(document).ready(function() {
 function newGame() {
 	$('.box').removeClass("X");
 	$('.box').removeClass("O");
+	if (game == 0) {
+		turn = 1;
+		game = 1;
+	}
+	else {
+		turn = 0;
+		game = 0;
+	}
 }
 
+function owins() {
+	owin++;
+	$('.ocount').text(owin);
+	console.log(owin)
+}
+
+function xwins() {
+	xwin++;
+	$('.xcount').text(xwin);
+	console.log(xwin)
+}
+
+function ties() {
+	ties++;
+	$('.tie').text(ties);
+	console.log(ties)
+}
